@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIP 视频破解软件</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        width: 960px;
+        padding: 40px;
+        border: 1px solid #ccc;
+        border-radius: 16px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      }
+      .container h2 {
+        text-align: center;
+        font-size: 2em;
+      }
+      .input-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+      .input-group label {
+        width: 200px;
+        font-size: 1.2em;
+      }
+      .input-group input {
+        flex: 1;
+        padding: 10px;
+        font-size: 1.2em;
+      }
+      .input-group button {
+        margin-left: 10px;
+        height: 50px;
+        font-size: 1.2em;
+      }
+      .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      button {
+        width: 160px;
+        height: 80px;
+        font-size: 1.2em;
+      }
+      .play-button {
+        width: 100%;
+        height: 80px;
+        margin-top: 20px;
+        font-size: 1.2em;
+      }
+      .tip {
+        text-align: center;
+        color: #666;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>VIP 视频破解软件</h2>
+
+      <div class="input-group">
+        <label for="movieLink">网页视频链接：</label>
+        <input type="text" id="movieLink" placeholder="请输入视频链接" />
+        <button onclick="clearInput()">清空</button>
+      </div>
+
+      <div class="button-group">
+        <button onclick="openSite('https://www.iqiyi.com')">爱奇艺</button>
+        <button onclick="openSite('https://v.qq.com')">腾讯视频</button>
+        <button onclick="openSite('https://www.youku.com')">优酷视频</button>
+      </div>
+
+      <button class="play-button" onclick="playVIP()">播放VIP视频</button>
+
+      <div class="tip">提示：将视频链接复制到框内，点击播放VIP视频</div>
+    </div>
+
+    <script>
+      function openSite(url) {
+        window.open(url, "_blank");
+      }
+
+      function playVIP() {
+        const url = "https://jx.xmflv.cc/?url=";
+        const videoLink = document.getElementById("movieLink").value;
+        if (videoLink) {
+          window.open(url + encodeURIComponent(videoLink), "_blank");
+        } else {
+          alert("请输入视频链接！");
+        }
+      }
+
+      function clearInput() {
+        document.getElementById("movieLink").value = "";
+      }
+    </script>
+  </body>
+</html>
